@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+ <div hx-get="{% url 'books' %}" hx-trigger="every 2s">
+ 
+<div class="mt-5 py-5 border-t border-gray-100" >
+    {% for book in books %}
+
+    {% include "partials/book_detail.html" %}
+
+    {% endfor %}
+</div>
+
+ </div>
+
+ {% endblock %}
